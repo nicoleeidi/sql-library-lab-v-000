@@ -9,7 +9,7 @@ end
 
 
 def select_value_and_count_of_most_prolific_species
-  "SELECT series.title, COUNT(series.title) FROM series
+  "SELECT characters.species, COUNT(series.title) FROM series
   INNER JOIN books ON books.series_id=series.id
   ORDER BY COUNT(series.title);"
 end
