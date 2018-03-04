@@ -9,9 +9,9 @@ end
 
 
 def select_value_and_count_of_most_prolific_species
-  "SELECT series.name, COUNT(series.name) FROM series
+  "SELECT series.title, COUNT(series.title) FROM series
   INNER JOIN series ON books.series_id=series.id
-  ORDER BY COUNT(series.name);"
+  ORDER BY COUNT(series.title);"
 end
 
 def select_name_and_series_subgenres_of_authors #what is it asking???
