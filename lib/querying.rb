@@ -9,15 +9,14 @@ end
 
 
 def select_value_and_count_of_most_prolific_species
-  "SELECT series.title, COUNT(series.title) FROM series
-  INNER JOIN books ON books.series_id=series.id
-  ORDER BY COUNT(series.title);"
+  "SELECT characters.species, COUNT(characters.species) FROM characters
+    GROUP BY characters.species ORDER BY COUNT(characters.species) DESC LIMIT 1;"
 end
 
 def select_name_and_series_subgenres_of_authors #what is it asking???
   "SELECT authors.name, subgenres.name FROM authors
   INNER JOIN series ON series.author_id=authors.id
-  INNER JOIN subgenres ON subgenres.id=serires.subgenre_id;"
+  INNER JOIN subgenres ON subgenres.id=series.subgenre_id;"
 end
 
 def select_series_title_with_most_human_characters
